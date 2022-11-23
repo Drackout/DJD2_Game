@@ -14,21 +14,26 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float _RotationVelocityFactor;
     [SerializeField] private float _maxHeadUpAngle;
     [SerializeField] private float _minHeadDownAngle;
+    [SerializeField] private float _headYPosition;
 
     private CharacterController _characterController;
-    private Transform   _head;
-    private Vector3     _acceleration;
-    private Vector3     _velocity;
-    private bool        _startJump;
+    private Transform           _head;
+    private Vector3             _acceleration;
+    private Vector3             _velocity;
+    private bool                _startJump;
+    private Vector3             _headPosition;
+    private bool                _startCrouch;
 
     // Start is called before the first frame update
     void Start()
     {
-        _characterController = GetComponent<CharacterController>();
-        _head = GetComponentInChildren<Camera>().transform;
-        _velocity = Vector3.zero;
-        _acceleration = Vector3.zero;
-        _startJump = false;
+        _characterController    = GetComponent<CharacterController>();
+        _head                   = GetComponentInChildren<Camera>().transform;
+        _velocity               = Vector3.zero;
+        _acceleration           = Vector3.zero;
+        _startJump              = false;
+        _headPosition           = Vector3.zero;
+        _startCrouch            = false;
 
         HideCursor();
     }
@@ -44,6 +49,7 @@ public class PlayerMovement : MonoBehaviour
         UpdateRotation();
         UpdateHead();
         CheckForJump();
+        CheckForCrouch();
     }
 
     private void UpdateRotation()
@@ -71,6 +77,21 @@ public class PlayerMovement : MonoBehaviour
     {
         if(Input.GetButtonDown("Jump") && _characterController.isGrounded)
             _startJump = true;
+    }
+
+    private void CheckForCrouch()
+    {
+        if (Input.GetButtonDown("Crouch") && _characterController.isGrounded)
+        {
+            _startCrouch = true;
+            UpdateCrouch();
+        }
+        else if (Input.GetButtonUp("Crouch") && _characterController.isGrounded)
+        {
+            _startCrouch = false;
+            UpdateCrouch();
+        }
+            
     }
 
     private void FixedUpdate()
@@ -126,6 +147,26 @@ public class PlayerMovement : MonoBehaviour
             _acceleration.y = _gravityAcceleration;
     }
 
+    private void UpdateCrouch()
+    {
+        //_headPosition.y
+
+        if (_startCrouch)
+        {
+            Vector3 headPosition = _head.position;
+            headPosition.y = headPosition.y - 0.421f;
+
+            _head.position = headPosition;
+            //Use LERP for smooth
+        }
+        else
+        {
+            Vector3 headPosition = _head.position;
+            headPosition.y = headPosition.y + 0.421f;
+
+            _head.position = headPosition;
+        }
+    }
 
     private void UpdateVelocity()
     {

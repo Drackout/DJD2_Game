@@ -61,7 +61,7 @@ public class PlayerInteraction : MonoBehaviour
 
     private void CheckForPlayerInput()
     {
-        if (Input.GetMouseButtonDown(0) && _currentInteractive != null)
+        if (Input.GetButtonDown("Pick") && _currentInteractive != null)
         {
             _currentInteractive.Interact();
             _refreshInteractive = true;

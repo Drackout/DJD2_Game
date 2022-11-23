@@ -62,7 +62,7 @@ public class PlayerInventory : MonoBehaviour
 
     void Update()
     {
-        CheckForPlayerInpur();    
+        CheckForPlayerInput();    
     }
 
     public Interactive GetSelected()
@@ -70,7 +70,7 @@ public class PlayerInventory : MonoBehaviour
         return _selectedSlot != -1 ? _inventory[_selectedSlot] : null;
     }
 
-    private void CheckForPlayerInpur()
+    private void CheckForPlayerInput()
     {
         for (int i = 0; i < _slotCount; ++i)
             if (Input.GetKeyDown(KeyCode.Alpha1 + i))
