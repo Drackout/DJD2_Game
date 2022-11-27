@@ -23,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
     private bool                _startJump;
     private Vector3             _headPosition;
     private bool                _startCrouch;
+    private float               _sinPI4;
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +35,7 @@ public class PlayerMovement : MonoBehaviour
         _startJump              = false;
         _headPosition           = Vector3.zero;
         _startCrouch            = false;
+        _sinPI4                 = Mathf.Sin(Mathf.PI / 4);
 
         HideCursor();
     }
@@ -140,9 +142,7 @@ public class PlayerMovement : MonoBehaviour
     {
         _acceleration.y = _gravityAcceleration;
         if (_startJump)
-        {
             _acceleration.y = _jumpAcceleration;
-        }
         else
             _acceleration.y = _gravityAcceleration;
     }
@@ -157,7 +157,7 @@ public class PlayerMovement : MonoBehaviour
             headPosition.y = headPosition.y - 0.421f;
 
             _head.position = headPosition;
-            //Use LERP for smooth
+            //Use LERP for smooth?
         }
         else
         {
@@ -172,16 +172,20 @@ public class PlayerMovement : MonoBehaviour
     {
         _velocity += _acceleration * Time.fixedDeltaTime;
 
-        if (_acceleration.z == 0 || (_acceleration.z * _velocity.z < 0f))
+        if (_acceleration.z == 0f || (_acceleration.z * _velocity.z < 0f))
             _velocity.z = 0f;
-        else
+        else if (_acceleration.x == 0f)
             _velocity.z = Mathf.Clamp(_velocity.z, _maxBackwardVelocity, _maxForwardVelocity);
-            
-        if (_acceleration.x == 0 || (_acceleration.x * _velocity.x < 0f))
-            _velocity.x = 0f;
         else
+            _velocity.z = Mathf.Clamp(_velocity.z, _maxBackwardVelocity * _sinPI4, _maxForwardVelocity * _sinPI4);
+
+        if (_acceleration.x == 0f || (_acceleration.x * _velocity.x < 0f))
+            _velocity.x = 0f;
+        else if (_acceleration.z == 0f)
             _velocity.x = Mathf.Clamp(_velocity.x, -_maxStrafeVelocity, _maxStrafeVelocity);
-        
+        else
+            _velocity.x = Mathf.Clamp(_velocity.x, -_maxStrafeVelocity * _sinPI4, _maxStrafeVelocity * _sinPI4);
+
         if (_characterController.isGrounded && !_startJump)
             _velocity.y = -0.1f;
         else
