@@ -8,6 +8,11 @@ public class PlayerFlashlights : MonoBehaviour
     private Transform           _head;
     private Light               _Light;
 
+    [SerializeField] private float _lightIntensityNormal;
+    [SerializeField] private float _lightIntensityUV;
+    [SerializeField] private Color _lightColorNormal;
+    [SerializeField] private Color _lightColorUV;
+
 
     // Start is called before the first frame update
     void Start()
@@ -23,15 +28,15 @@ public class PlayerFlashlights : MonoBehaviour
         }
         else if (Input.GetButtonDown("Fire2"))
         {
-            if (_Light.color == Color.magenta)
+            if (_Light.color == _lightColorUV)
             {
-                _Light.intensity = 2;
-                _Light.color = Color.white;
+                _Light.intensity = _lightIntensityNormal;
+                _Light.color = _lightColorNormal;
             }
             else
             {
-                _Light.intensity = 1;
-                _Light.color = Color.magenta;
+                _Light.intensity = _lightIntensityUV;
+                _Light.color = _lightColorUV;
                 //Call UV mode
             }
         }

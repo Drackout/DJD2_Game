@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class PlayerInteraction : MonoBehaviour
 {
-    [SerializeField] private float _maxInteractionDistance;
-    [SerializeField] private UIManager _uiManager;
+    [SerializeField] private float      _maxInteractionDistance;
+    [SerializeField] private UIManager  _uiManager;
     
-    private Transform _cameraTransform;
+    private Transform   _cameraTransform;
     private Interactive _currentInteractive;
-    private bool _refreshInteractive;
+    private bool        _refreshInteractive;
 
     void Start()
     {

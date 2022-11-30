@@ -18,11 +18,23 @@ public class PlayerInventory : MonoBehaviour
 
     public void Add(Interactive item)
     {
-        _inventory.Add(item);
-        _uiManager.ShowInventoryIcon(_inventory.Count-1, item.inventoryIcon);
-        
-        if (_inventory.Count == 1)
-            SelectInventorySlot(0);
+        if (_inventory.Count < 2)
+        {
+            _inventory.Add(item);
+            _uiManager.ShowInventoryIcon(_inventory.Count-1, item.inventoryIcon);
+
+            if (_inventory.Count == 1)
+                SelectInventorySlot(0);
+        }
+        print("inventory: " + _inventory.Count);
+    }
+
+    public bool isFull()
+    {
+        if (_inventory.Count < 2)
+            return false;
+        else
+            return true;
     }
 
     public void Remove(Interactive item)

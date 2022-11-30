@@ -106,22 +106,26 @@ public class Interactive : MonoBehaviour
 
     private void InteractSelf(bool direct)
     {
-        if (direct && isType(InteractiveData.Type.Indirect))
-            return;
-
-        if (_animator != null && !isType(InteractiveData.Type.Pickables))
-            _animator.SetTrigger("Interact");
-
-        if (isType(InteractiveData.Type.Pickables))
+        //checks if the inventory is full before add
+        if (!_PlayerInventory.isFull())
         {
-            _PlayerInventory.Add(this);
-            gameObject.SetActive(false);
-        }
-        else if (isType(InteractiveData.Type.Interactive) || isType(InteractiveData.Type.InteractMulti))
-        {
-            ++_interactionCount;
-            UpdateDependents();
-            InteractDependents();
+            if (direct && isType(InteractiveData.Type.Indirect))
+                return;
+
+            if (_animator != null && !isType(InteractiveData.Type.Pickables))
+                _animator.SetTrigger("Interact");
+
+            if (isType(InteractiveData.Type.Pickables))
+            {
+                _PlayerInventory.Add(this);
+                gameObject.SetActive(false);
+            }
+            else if (isType(InteractiveData.Type.Interactive) || isType(InteractiveData.Type.InteractMulti))
+            {
+                ++_interactionCount;
+                UpdateDependents();
+                InteractDependents();
+            }
         }
     }
 
