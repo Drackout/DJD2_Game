@@ -44,6 +44,7 @@ public class PlayerInteraction : MonoBehaviour
     {
         _currentInteractive = null;
         _uiManager.HideInteractionPanel();
+        _uiManager.HideInteractionCodePanel();
     }
 
     private void SetCurrentInteractive(Interactive interactive)

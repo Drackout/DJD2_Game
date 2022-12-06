@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class PlayerFlashlights : MonoBehaviour
 {
-    private CharacterController _characterController;
-    private Transform           _head;
-    private Light               _Light;
-
     [SerializeField] private float _lightIntensityNormal;
     [SerializeField] private float _lightIntensityUV;
     [SerializeField] private Color _lightColorNormal;
     [SerializeField] private Color _lightColorUV;
 
+    private Light               _Light;
 
     // Start is called before the first frame update
     void Start()

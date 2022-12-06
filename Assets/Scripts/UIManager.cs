@@ -7,6 +7,7 @@ using TMPro;
 public class UIManager : MonoBehaviour
 {
     [SerializeField] private GameObject _interactionPanel;
+    [SerializeField] private GameObject _interactionCodePanel;
     [SerializeField] private TextMeshProUGUI _interactionText;
     [SerializeField] private Image[] _inventorySlots;
     [SerializeField] private Image[] _inventoryIcons;
@@ -16,6 +17,7 @@ public class UIManager : MonoBehaviour
         HideInteractionPanel();
         HideInventoryIcons();
         SetSelectedInventorySlot(-1);
+        HideInteractionCodePanel();
     }
 
     public void HideInteractionPanel()
@@ -23,10 +25,21 @@ public class UIManager : MonoBehaviour
         _interactionPanel.SetActive(false);
     }
 
+    public void HideInteractionCodePanel()
+    {
+        _interactionCodePanel.SetActive(false);
+    }
+
     public void ShowInteractionPanel(string message)
     {
         _interactionText.text = message;
         _interactionPanel.SetActive(true);
+    }
+
+    public void ShowInteractionCodePanel()
+    {
+        _interactionPanel.SetActive(true);
+        _interactionCodePanel.SetActive(true);
     }
 
     public void HideInventoryIcons()

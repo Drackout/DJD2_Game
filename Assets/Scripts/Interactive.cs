@@ -6,7 +6,10 @@ using UnityEngine;
 public class Interactive : MonoBehaviour
 {
     
-    [SerializeField] private InteractiveData _interactiveData;
+    [SerializeField] private InteractiveData    _interactiveData;
+    [SerializeField] private UIManager          _uIManager; //im not proud of this.. but here we go
+    [SerializeField] private GameObject         _player;
+    [SerializeField] private GameObject         _playerFlashlight;
 
     private InteractionManager      _interactionManager;
     private PlayerInventory         _PlayerInventory;
@@ -26,6 +29,11 @@ public class Interactive : MonoBehaviour
     public string inventoryName
     {
         get { return _interactiveData.inventoryName; }
+    }
+
+    public int puzzleCode
+    {
+        get { return  _interactiveData.code; }
     }
 
     public Sprite inventoryIcon
@@ -56,6 +64,18 @@ public class Interactive : MonoBehaviour
         isOn                    = _interactiveData.startsOn;
 
         _interactionManager.RegisterInteractive(this);
+        HideCursor();
+        ShowCursor();
+    }
+
+    private void HideCursor()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    private void ShowCursor()
+    {
+        Cursor.lockState = CursorLockMode.None;
     }
 
     public void addRequirement(Interactive requirements)
@@ -67,7 +87,6 @@ public class Interactive : MonoBehaviour
     {
         _dependents.Add(dependent);
     }
-
 
     public string GetInteractionMessage()
     {
@@ -97,10 +116,25 @@ public class Interactive : MonoBehaviour
 
     public void Interact()
     {
+        if (isType(InteractiveData.Type.Code))
+        {
+            //Show insert code UI
+            _uIManager.ShowInteractionCodePanel();
+            _uIManager.ShowInteractionPanel("");
+            ShowCursor();
+            _player.GetComponent<PlayerMovement>().enabled = false;
+            _playerFlashlight.GetComponent<PlayerFlashlights>().enabled = false;
+
+            //Compare the inserted code with the code itself
+            print(puzzleCode.ToString());
+
+            //if correct do X
+        }
         if (requirementsMet)
             InteractSelf(true);
         else if (PlayerHasRequirementSelected())
             UseRequirement();
+
         
     }
 

@@ -7,7 +7,7 @@ using UnityEngine;
                  menuName = "InteractiveData")]
 public class InteractiveData : ScriptableObject
 {
-    public enum Type { Pickables, Interactive, InteractMulti, Indirect };
+    public enum Type { Pickables, Interactive, InteractMulti, Indirect, Code };
 
     public Type                 type;
     public bool                 startsOn = true;
@@ -16,4 +16,5 @@ public class InteractiveData : ScriptableObject
     public InteractiveData[]    requirments;
     public string               requirmentsMessage;
     public string[]             interactionMessages;
+    public int                  code;
 }
