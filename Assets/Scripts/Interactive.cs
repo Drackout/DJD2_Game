@@ -4,8 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 public class Interactive : MonoBehaviour
-{
-    
+{    
     [SerializeField] private InteractiveData    _interactiveData;
     [SerializeField] private UIManager          _uIManager; //im not proud of this.. but here we go
     [SerializeField] private GameObject         _player;
@@ -68,12 +67,12 @@ public class Interactive : MonoBehaviour
         ShowCursor();
     }
 
-    private void HideCursor()
+    public void HideCursor()
     {
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    private void ShowCursor()
+    public void ShowCursor()
     {
         Cursor.lockState = CursorLockMode.None;
     }
@@ -114,21 +113,30 @@ public class Interactive : MonoBehaviour
         return false;
     }
 
+    public void disableMovement()
+    {
+        _player.GetComponent<PlayerMovement>().enabled = false;
+        _playerFlashlight.GetComponent<PlayerFlashlights>().enabled = false;
+    }
+
+    public void enableMovement()
+    {
+        _player.GetComponent<PlayerMovement>().enabled = true;
+        _playerFlashlight.GetComponent<PlayerFlashlights>().enabled = true;
+    }
+
     public void Interact()
     {
         if (isType(InteractiveData.Type.Code))
         {
             //Show insert code UI
-            _uIManager.ShowInteractionCodePanel();
             _uIManager.ShowInteractionPanel("");
             ShowCursor();
-            _player.GetComponent<PlayerMovement>().enabled = false;
-            _playerFlashlight.GetComponent<PlayerFlashlights>().enabled = false;
-
+            disableMovement();
+            
             //Compare the inserted code with the code itself
-            print(puzzleCode.ToString());
+            //ValidateCode.cs
 
-            //if correct do X
         }
         if (requirementsMet)
             InteractSelf(true);

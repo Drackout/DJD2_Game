@@ -27,8 +27,7 @@ public class Rune : MonoBehaviour
     void Update()
     {
         float distance = Vector3.Distance(transform.position, player.position);
-/*        if ((distance >= minDist) && (distance <= maxDist))
-        {*/
+
             float meanDist = (maxDist + minDist) * 0.5f;
             float winDist = (maxDist - minDist) * 0.5f;
             float factor = 1 - Mathf.Abs(Mathf.Clamp((distance - meanDist) / winDist, -1, 1));
@@ -37,19 +36,11 @@ public class Rune : MonoBehaviour
             float dp = Vector3.Dot(transform.forward, player.forward);
             dp = Mathf.Clamp01((dp - tol) / (1.0f - tol));
 
+            //limit the emission light 
             factor = Mathf.Min(factor * dp, maxEmission);
-            //factor = factor * dp;
-
-            Debug.Log(factor);
 
             material.EnableKeyword("_EMISSION");
             material.SetColor("_EmissionColor", Color.green * factor);
-/*        }
-        else
-        {
-            material.DisableKeyword("_EMISSION");
-            material.SetColor("_EmissionColor", Color.black);
-        }*/
     }
 
     private void OnDrawGizmosSelected()

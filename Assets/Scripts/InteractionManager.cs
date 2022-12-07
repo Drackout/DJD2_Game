@@ -63,7 +63,6 @@ public class InteractionManager : MonoBehaviour
         {
             if (interactive.interactiveData == interactiveData)
                 return interactive;
-
         }
         return null;
     }
