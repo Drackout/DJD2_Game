@@ -12,11 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ab6794173a745846b5b99f0a9f4588e, type: 3}
   m_Name: Door
   m_EditorClassIdentifier: 
-  type: 3
+  type: 1
   startsOn: 1
   inventoryName: 
   inventoryIcon: {fileID: 0}
   requirments:
-  - {fileID: 11400000, guid: 6503b1abe3ff10c4f89ace499c9d73be, type: 2}
-  requirmentsMessage: Gotta open this~
-  interactionMessages: []
+  - {fileID: 11400000, guid: bfd5e6d8b59e8fd48861e8adffcd3ba5, type: 2}
+  requirmentsMessage: Locked door
+  interactionMessages:
+  - 
+  code: 0

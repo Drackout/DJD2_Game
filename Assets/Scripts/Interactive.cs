@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Interactive : MonoBehaviour
 {    
@@ -19,6 +20,9 @@ public class Interactive : MonoBehaviour
     private int                     _interactionCount;
 
     public bool                     isOn;
+    public UnityEvent onPicked;
+    public UnityEvent onRequirementsMet;
+    public UnityEvent onInteracted;
 
     public InteractiveData interactiveData
     {
@@ -154,9 +158,6 @@ public class Interactive : MonoBehaviour
             if (direct && isType(InteractiveData.Type.Indirect))
                 return;
 
-            if (_animator != null && !isType(InteractiveData.Type.Pickables))
-                _animator.SetTrigger("Interact");
-
             if (isType(InteractiveData.Type.Pickables))
             {
                 _PlayerInventory.Add(this);
@@ -168,6 +169,14 @@ public class Interactive : MonoBehaviour
                 UpdateDependents();
                 InteractDependents();
             }
+
+            if (isType(InteractiveData.Type.Pickables))
+                onPicked.Invoke();
+            else
+                onInteracted.Invoke();
+
+            if (_animator != null && !isType(InteractiveData.Type.Pickables))
+                _animator.SetTrigger("Interact");
         }
     }
 
@@ -191,6 +200,12 @@ public class Interactive : MonoBehaviour
         }
         _requirementsMet = true;
 
+        if (!_requirementsMet)
+        {
+            _requirementsMet = true;
+            onRequirementsMet.Invoke();
+        }
+
         if (_animator != null)
             _animator.SetTrigger("RequirementsMet");
         UpdateDependents();
@@ -210,6 +225,8 @@ public class Interactive : MonoBehaviour
         _PlayerInventory.Remove(requirement);
 
         ++requirement._interactionCount;
+
+        requirement.onInteracted.Invoke();
 
         if (requirement._animator != null)
         {
