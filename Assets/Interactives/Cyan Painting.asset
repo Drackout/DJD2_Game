@@ -10,13 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2ab6794173a745846b5b99f0a9f4588e, type: 3}
-  m_Name: Paint_4
+  m_Name: Cyan Painting
   m_EditorClassIdentifier: 
   type: 0
   startsOn: 1
-  inventoryName: Paint_4
+  inventoryName: Cyan Painting
   inventoryIcon: {fileID: 21300000, guid: 3494dc956dfd7174abc07060940a2848, type: 3}
   requirments: []
   requirmentsMessage: 
   interactionMessages:
   - Insert Paint 4
+  code: 0

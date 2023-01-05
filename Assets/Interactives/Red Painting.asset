@@ -10,13 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2ab6794173a745846b5b99f0a9f4588e, type: 3}
-  m_Name: Paint_1_Holder 1
+  m_Name: Red Painting
   m_EditorClassIdentifier: 
-  type: 3
+  type: 0
   startsOn: 1
-  inventoryName: 
-  inventoryIcon: {fileID: 0}
-  requirments:
-  - {fileID: 11400000, guid: 18ebecda3eec2c342826e5c87afc3165, type: 2}
-  requirmentsMessage: Missing Paint 1
-  interactionMessages: []
+  inventoryName: Red Painting
+  inventoryIcon: {fileID: 21300000, guid: c8a69ecdf54ac8e4b873466605de27ff, type: 3}
+  requirments: []
+  requirmentsMessage: 
+  interactionMessages:
+  - Place Paint 1
+  code: 0

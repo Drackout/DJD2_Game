@@ -10,13 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2ab6794173a745846b5b99f0a9f4588e, type: 3}
-  m_Name: Paint_2
+  m_Name: Silver Key
   m_EditorClassIdentifier: 
   type: 0
   startsOn: 1
-  inventoryName: Paint_2
-  inventoryIcon: {fileID: 21300000, guid: cdb88fdb0cf46b244a667edaff21c7df, type: 3}
+  inventoryName: Silver_Key
+  inventoryIcon: {fileID: 21300000, guid: 120bf54dff785a0429b068b814e9c12a, type: 3}
   requirments: []
   requirmentsMessage: 
-  interactionMessages:
-  - Insert Paint 2
+  interactionMessages: []
