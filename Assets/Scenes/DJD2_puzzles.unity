@@ -2209,7 +2209,7 @@ PrefabInstance:
     - target: {fileID: -8531234096563945662, guid: 3fb43fbf3a765824aada0a43c5eba947, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 5314cd905b639bb48ba110bf2206fb0f, type: 2}
+      objectReference: {fileID: 2100000, guid: 4793520d8e3b433469555e9d711c6541, type: 2}
     - target: {fileID: -8513424388201257645, guid: 3fb43fbf3a765824aada0a43c5eba947, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -2249,7 +2249,7 @@ PrefabInstance:
     - target: {fileID: 8247994413960396516, guid: 3fb43fbf3a765824aada0a43c5eba947, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 5314cd905b639bb48ba110bf2206fb0f, type: 2}
+      objectReference: {fileID: 2100000, guid: 4793520d8e3b433469555e9d711c6541, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3fb43fbf3a765824aada0a43c5eba947, type: 3}
 --- !u!4 &196819795 stripped
@@ -2483,6 +2483,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 12efd135a7c36524698f776d873e41c8, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4793520d8e3b433469555e9d711c6541, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 12efd135a7c36524698f776d873e41c8, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7fc7806f4f314c947a92173ea27e548e, type: 2}
     - target: {fileID: 919132149155446097, guid: 12efd135a7c36524698f776d873e41c8, type: 3}
       propertyPath: m_Name
       value: Hallway #3 (Door)
@@ -4592,11 +4600,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 863f4e5a96894e34dadf4aa0638ff336, type: 3}
   m_PrefabInstance: {fileID: 1260645149}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &568842571 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 12efd135a7c36524698f776d873e41c8, type: 3}
-  m_PrefabInstance: {fileID: 838888153}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &569503568
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4652,6 +4655,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: e214c2cb48361b04f90cceb8d3a0047d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4793520d8e3b433469555e9d711c6541, type: 2}
+    - target: {fileID: -7511558181221131132, guid: e214c2cb48361b04f90cceb8d3a0047d, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7fc7806f4f314c947a92173ea27e548e, type: 2}
     - target: {fileID: 919132149155446097, guid: e214c2cb48361b04f90cceb8d3a0047d, type: 3}
       propertyPath: m_Name
       value: Hallway #2
@@ -5329,7 +5340,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 12efd135a7c36524698f776d873e41c8, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 12efd135a7c36524698f776d873e41c8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5371,6 +5382,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -0.295
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 12efd135a7c36524698f776d873e41c8, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4793520d8e3b433469555e9d711c6541, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 12efd135a7c36524698f776d873e41c8, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7fc7806f4f314c947a92173ea27e548e, type: 2}
     - target: {fileID: 919132149155446097, guid: 12efd135a7c36524698f776d873e41c8, type: 3}
       propertyPath: m_Name
       value: Hallway #3 (Door) (3)
@@ -5880,14 +5899,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705507993}
-  m_LocalRotation: {x: 0.6251637, y: 0.6027772, z: -0.4280399, w: -0.25022388}
+  m_LocalRotation: {x: -0.67336136, y: -0.7199624, z: 0.16796638, w: -0.0050887694}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -191.722, y: -301.276, z: 638.699}
+  m_LocalEulerAnglesHint: {x: -194.401, y: 13.059998, z: 627.826}
 --- !u!114 &705507996
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6547,7 +6566,6 @@ Transform:
   - {fileID: 84337964}
   - {fileID: 1241714729}
   - {fileID: 196819795}
-  - {fileID: 568842571}
   - {fileID: 900607751}
   - {fileID: 1398445799}
   - {fileID: 1871326042}
@@ -6559,63 +6577,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ec88bb1809923c04f9aca7f4cdb3e144, type: 3}
   m_PrefabInstance: {fileID: 640890525}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &838888153
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 805263996}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: 12efd135a7c36524698f776d873e41c8, type: 3}
-      propertyPath: m_RootOrder
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 12efd135a7c36524698f776d873e41c8, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -2.103
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 12efd135a7c36524698f776d873e41c8, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.030000001
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 12efd135a7c36524698f776d873e41c8, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -2.474
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 12efd135a7c36524698f776d873e41c8, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: -0.70772094
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 12efd135a7c36524698f776d873e41c8, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 12efd135a7c36524698f776d873e41c8, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.7064921
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 12efd135a7c36524698f776d873e41c8, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 12efd135a7c36524698f776d873e41c8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 12efd135a7c36524698f776d873e41c8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 270.1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 12efd135a7c36524698f776d873e41c8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 12efd135a7c36524698f776d873e41c8, type: 3}
-      propertyPath: m_Name
-      value: Hallway #3 (Door) (1)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 12efd135a7c36524698f776d873e41c8, type: 3}
 --- !u!1 &845662511
 GameObject:
   m_ObjectHideFlags: 0
@@ -8106,6 +8067,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: ec0a53ce2a59e714db13f549c842c6b1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4793520d8e3b433469555e9d711c6541, type: 2}
+    - target: {fileID: -7511558181221131132, guid: ec0a53ce2a59e714db13f549c842c6b1, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7fc7806f4f314c947a92173ea27e548e, type: 2}
+    - target: {fileID: -7511558181221131132, guid: ec0a53ce2a59e714db13f549c842c6b1, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 262135277bb40b041a5e398753f9db66, type: 2}
     - target: {fileID: 919132149155446097, guid: ec0a53ce2a59e714db13f549c842c6b1, type: 3}
       propertyPath: m_Name
       value: Hallway #1
@@ -8943,7 +8916,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 12efd135a7c36524698f776d873e41c8, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 12efd135a7c36524698f776d873e41c8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8985,6 +8958,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 12efd135a7c36524698f776d873e41c8, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4793520d8e3b433469555e9d711c6541, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 12efd135a7c36524698f776d873e41c8, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7fc7806f4f314c947a92173ea27e548e, type: 2}
     - target: {fileID: 919132149155446097, guid: 12efd135a7c36524698f776d873e41c8, type: 3}
       propertyPath: m_Name
       value: Hallway #3 (Door) (4)
@@ -9143,6 +9124,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hallway #4
       objectReference: {fileID: 0}
+    - target: {fileID: 6971707658353237693, guid: f9a383ed5ad3e844298f5e8d783cb171, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4793520d8e3b433469555e9d711c6541, type: 2}
+    - target: {fileID: 6971707658353237693, guid: f9a383ed5ad3e844298f5e8d783cb171, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7fc7806f4f314c947a92173ea27e548e, type: 2}
+    - target: {fileID: 6971707658353237693, guid: f9a383ed5ad3e844298f5e8d783cb171, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 262135277bb40b041a5e398753f9db66, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9a383ed5ad3e844298f5e8d783cb171, type: 3}
 --- !u!1 &1096136462
@@ -10846,7 +10839,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 12efd135a7c36524698f776d873e41c8, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 12efd135a7c36524698f776d873e41c8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10888,6 +10881,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 12efd135a7c36524698f776d873e41c8, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4793520d8e3b433469555e9d711c6541, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 12efd135a7c36524698f776d873e41c8, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7fc7806f4f314c947a92173ea27e548e, type: 2}
     - target: {fileID: 919132149155446097, guid: 12efd135a7c36524698f776d873e41c8, type: 3}
       propertyPath: m_Name
       value: Hallway #3 (Door) (2)
