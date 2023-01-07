@@ -18,5 +18,6 @@ MonoBehaviour:
   inventoryIcon: {fileID: 21300000, guid: 120bf54dff785a0429b068b814e9c12a, type: 3}
   requirments: []
   requirmentsMessage: 
-  interactionMessages: []
+  interactionMessages:
+  - Use Silver Key
   code: 0

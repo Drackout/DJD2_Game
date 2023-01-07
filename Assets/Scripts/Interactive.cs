@@ -7,22 +7,22 @@ using UnityEngine.Events;
 public class Interactive : MonoBehaviour
 {    
     [SerializeField] private InteractiveData    _interactiveData;
-    [SerializeField] private UIManager          _uIManager; //im not proud of this.. but here we go
+    [SerializeField] private UIManager          _uIManager;
     [SerializeField] private GameObject         _player;
     [SerializeField] private GameObject         _playerFlashlight;
 
-    private InteractionManager      _interactionManager;
-    private PlayerInventory         _PlayerInventory;
-    private List<Interactive>       _dependents;
-    private List<Interactive>       _requirements;
-    private Animator                _animator;
-    private bool                    _requirementsMet;
-    private int                     _interactionCount;
+    private InteractionManager                  _interactionManager;
+    private PlayerInventory                     _PlayerInventory;
+    private List<Interactive>                   _dependents;
+    private List<Interactive>                   _requirements;
+    private Animator                            _animator;
+    private bool                                _requirementsMet;
+    private int                                 _interactionCount;
 
-    public bool                     isOn;
-    public UnityEvent onPicked;
-    public UnityEvent onRequirementsMet;
-    public UnityEvent onInteracted;
+    public bool                                 isOn;
+    public UnityEvent                           onPicked;
+    public UnityEvent                           onRequirementsMet;
+    public UnityEvent                           onInteracted;
 
     public InteractiveData interactiveData
     {
@@ -239,6 +239,5 @@ public class Interactive : MonoBehaviour
 
         CheckRequirements();
         _PlayerInventory.Remove(requirement);
-        CheckRequirements();
     }
 }

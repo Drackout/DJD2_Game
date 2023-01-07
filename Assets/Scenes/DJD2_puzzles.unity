@@ -9662,7 +9662,9 @@ MonoBehaviour:
   _RotationVelocityFactor: 1.5
   _maxHeadUpAngle: 70
   _minHeadDownAngle: 290
-  _headYPosition: 0.621
+  _charNormalHeight: 1.8
+  _charCrouchMultiplier: 1.2
+  _headWhileCrouch: 0.421
 --- !u!114 &1189058902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10724,7 +10726,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1319267850
 Transform:
   m_ObjectHideFlags: 0
@@ -15500,7 +15502,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c5df043bc19cf8749b534338139439cd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.437
+      value: -2.987
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c5df043bc19cf8749b534338139439cd, type: 3}
       propertyPath: m_LocalPosition.y

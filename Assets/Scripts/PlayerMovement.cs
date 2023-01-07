@@ -14,7 +14,11 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float _RotationVelocityFactor;
     [SerializeField] private float _maxHeadUpAngle;
     [SerializeField] private float _minHeadDownAngle;
-    [SerializeField] private float _headYPosition;
+    [SerializeField] private float _charNormalHeight;
+    [SerializeField] private float _charCrouchMultiplier;
+    [SerializeField] private float _headWhileCrouch;
+    
+
 
     private CharacterController _characterController;
     private Transform           _head;
@@ -24,8 +28,9 @@ public class PlayerMovement : MonoBehaviour
     private Vector3             _headPosition;
     private bool                _startCrouch;
     private float               _sinPI4;
+    private float               _headBeforeCrouch;
 
-    // Start is called before the first frame update
+
     void Start()
     {
         _characterController    = GetComponent<CharacterController>();
@@ -36,6 +41,7 @@ public class PlayerMovement : MonoBehaviour
         _headPosition           = Vector3.zero;
         _startCrouch            = false;
         _sinPI4                 = Mathf.Sin(Mathf.PI / 4);
+        _headBeforeCrouch       = _characterController.transform.localPosition.y + (_head.localPosition.y-0.1f);
 
         HideCursor();
     }
@@ -45,7 +51,7 @@ public class PlayerMovement : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         UpdateRotation();
@@ -149,20 +155,19 @@ public class PlayerMovement : MonoBehaviour
 
     private void UpdateCrouch()
     {
-        //_headPosition.y
-
         if (_startCrouch)
         {
             Vector3 headPosition = _head.position;
-            headPosition.y = headPosition.y - 0.421f;
-
+            headPosition.y = headPosition.y - _headWhileCrouch;
+            _characterController.height /= _charCrouchMultiplier;
             _head.position = headPosition;
-            //Use LERP for smooth?
         }
         else
         {
+            //Return Camera and Character to the start position
             Vector3 headPosition = _head.position;
-            headPosition.y = headPosition.y + 0.421f;
+            headPosition.y = _headBeforeCrouch;
+            _characterController.height = _charNormalHeight;
 
             _head.position = headPosition;
         }

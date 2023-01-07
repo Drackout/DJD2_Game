@@ -95,18 +95,18 @@ public class PlayerInventory : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Alpha1 + i))
             {
                 SelectInventorySlot(i);
-                print("CLICK");
+               // print("CLICK");
             }
             else if (Input.GetKey(KeyCode.Alpha1 + i))
             {
                 if (_checkInspector == false)
                 {
+                    // while holding disable object interaction
+                    // places it on player position
                     print("HOLD -> " + _inventory[_selectedSlot].getInteractionName());
-
+                    _obj.GetComponent<Interactive>().isOn = false;
                     _obj.SetActive(true);
-
                     _obj.transform.position = _PlayerCameraPos.position;
-                   
                     _checkInspector = true;
                 }
             }

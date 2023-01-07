@@ -8,6 +8,8 @@ public class ObjectView : MonoBehaviour
 
     private void Update()
     {
+        //Only rotates the object
+
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
         //float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 

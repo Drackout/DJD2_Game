@@ -47,7 +47,7 @@ public class Item_Used : MonoBehaviour
 
         if (valConvert >= 4)
         {
-            print("noice");
+            //print("noice");
             anim.SetTrigger("Interaction");
         }
     }
