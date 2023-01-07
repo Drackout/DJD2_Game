@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 3
   startsOn: 1
-  inventoryName: a
+  inventoryName: 
   inventoryIcon: {fileID: 0}
   requirments:
   - {fileID: 11400000, guid: 0806bd04a67b03246a218e1b1c959ce5, type: 2}
   requirmentsMessage: Missing Yellow Painting
   interactionMessages: []
-  code: 11
+  code: 0

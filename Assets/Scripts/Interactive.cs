@@ -227,8 +227,6 @@ public class Interactive : MonoBehaviour
     {
         Interactive requirement = _PlayerInventory.GetSelected();
 
-        _PlayerInventory.Remove(requirement);
-
         ++requirement._interactionCount;
 
         requirement.onInteracted.Invoke();
@@ -239,6 +237,8 @@ public class Interactive : MonoBehaviour
             requirement._animator.SetTrigger("Interact");
         }
 
+        CheckRequirements();
+        _PlayerInventory.Remove(requirement);
         CheckRequirements();
     }
 }

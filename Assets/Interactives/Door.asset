@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 1
   startsOn: 1
-  inventoryName: a
+  inventoryName: 
   inventoryIcon: {fileID: 0}
   requirments:
   - {fileID: 11400000, guid: bfd5e6d8b59e8fd48861e8adffcd3ba5, type: 2}
   requirmentsMessage: Locked door
   interactionMessages:
   - 
-  code: 11
+  code: 0
