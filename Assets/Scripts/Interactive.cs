@@ -91,6 +91,11 @@ public class Interactive : MonoBehaviour
         _dependents.Add(dependent);
     }
 
+    public string getInteractionName()
+    {
+        return interactiveData.inventoryName;
+    }
+
     public string GetInteractionMessage()
     {
         if (isType(InteractiveData.Type.Pickables) && !_PlayerInventory.Contains(this) && requirementsMet)

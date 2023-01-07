@@ -1,19 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class PlayerInventory : MonoBehaviour
 {
     [SerializeField] private UIManager  _uiManager;
     [SerializeField] private int        _slotCount;
+    [SerializeField] private GameObject _gameObjectTest;
+    [SerializeField] private Transform  _PlayerCameraPos;
 
     private List<Interactive>           _inventory;
     private int                         _selectedSlot;
+    private bool                        _checkInspector;
+    private GameObject                  _obj;
 
     void Start()
     {
         _inventory = new List<Interactive>();
         _selectedSlot = -1;
+        _checkInspector = false;
     }
 
     public void Add(Interactive item)
@@ -59,6 +65,7 @@ public class PlayerInventory : MonoBehaviour
         {
             _selectedSlot = index;
             _uiManager.SetSelectedInventorySlot(_selectedSlot);
+            _obj = _inventory[_selectedSlot].gameObject;
         }
     }
 
@@ -86,7 +93,30 @@ public class PlayerInventory : MonoBehaviour
     {
         for (int i = 0; i < _slotCount; ++i)
             if (Input.GetKeyDown(KeyCode.Alpha1 + i))
+            {
                 SelectInventorySlot(i);
+                print("CLICK");
+            }
+            else if (Input.GetKey(KeyCode.Alpha1 + i))
+            {
+                if (_checkInspector == false)
+                {
+                    print("HOLD -> " + _inventory[_selectedSlot].getInteractionName());
+
+                    _obj.SetActive(true);
+
+                    _obj.transform.position = _PlayerCameraPos.position;
+                   
+                    _checkInspector = true;
+                }
+            }
+            else if (Input.GetKeyUp(KeyCode.Alpha1 + i))
+            {
+                print("UP!");
+
+                _obj.SetActive(false);
+                _checkInspector = false;
+            }
     }
 
 }

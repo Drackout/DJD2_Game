@@ -14,10 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 2
   startsOn: 1
-  inventoryName: 
+  inventoryName: a
   inventoryIcon: {fileID: 0}
   requirments: []
   requirmentsMessage: 
   interactionMessages:
   - Open~
   - Close~
+  code: 11

@@ -14,9 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 3
   startsOn: 1
-  inventoryName: 
+  inventoryName: a
   inventoryIcon: {fileID: 0}
   requirments:
   - {fileID: 11400000, guid: c4cb3d501a1baca4aaa266c3cb43247a, type: 2}
   requirmentsMessage: Missing a fuse~
   interactionMessages: []
+  code: 11

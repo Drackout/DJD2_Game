@@ -19,5 +19,5 @@ MonoBehaviour:
   requirments: []
   requirmentsMessage: 
   interactionMessages:
-  - Place Paint 1
-  code: 0
+  - Place Red Painting
+  code: 11

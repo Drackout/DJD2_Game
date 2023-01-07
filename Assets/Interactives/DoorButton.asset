@@ -14,10 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 2
   startsOn: 1
-  inventoryName: 
+  inventoryName: a
   inventoryIcon: {fileID: 0}
   requirments:
   - {fileID: 11400000, guid: 6b93c9b70f20d5d429475b892b29bb7b, type: 2}
   requirmentsMessage: It's powered off~
   interactionMessages:
   - Push button~
+  code: 11

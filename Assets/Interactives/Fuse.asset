@@ -20,3 +20,4 @@ MonoBehaviour:
   requirmentsMessage: 
   interactionMessages:
   - Plug fuse
+  code: 11

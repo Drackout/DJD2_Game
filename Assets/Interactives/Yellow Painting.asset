@@ -19,5 +19,5 @@ MonoBehaviour:
   requirments: []
   requirmentsMessage: 
   interactionMessages:
-  - Insert Paint 2
-  code: 0
+  - Insert Yellow Painting
+  code: 11
