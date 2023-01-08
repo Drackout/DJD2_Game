@@ -8,7 +8,7 @@ public class PlayerInventory : MonoBehaviour
     [SerializeField] private UIManager  _uiManager;
     [SerializeField] private int        _slotCount;
     [SerializeField] private GameObject _gameObjectTest;
-    [SerializeField] private Transform  _PlayerCameraPos;
+    [SerializeField] private Transform  _ObjectViewSpawn;
 
     private List<Interactive>           _inventory;
     private int                         _selectedSlot;
@@ -106,7 +106,7 @@ public class PlayerInventory : MonoBehaviour
                     print("HOLD -> " + _inventory[_selectedSlot].getInteractionName());
                     _obj.GetComponent<Interactive>().isOn = false;
                     _obj.SetActive(true);
-                    _obj.transform.position = _PlayerCameraPos.position;
+                    _obj.transform.position = _ObjectViewSpawn.position;
                     _checkInspector = true;
                 }
             }

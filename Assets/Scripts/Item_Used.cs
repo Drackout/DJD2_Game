@@ -6,24 +6,24 @@ using TMPro;
 
 public class Item_Used : MonoBehaviour
 {
-    public Interactive fuse;
+    public Interactive Item;
     [SerializeField] private TextMeshProUGUI TotalDone;
     [SerializeField] private Animator anim;
 
     void Start()
     {
-        //fuse.onPicked.AddListener(OnFusePicked);
-        //fuse.onInteracted.AddListener(OnFuseInteracted);
+        //Item.onPicked.AddListener(OnItemPicked);
+        //Item.onInteracted.AddListener(OnItemInteracted);
     }
 
-    public void OnFusePicked()
+    public void OnItemPicked()
     {
-        print("The fuse was picked.");
+        print("The Item was picked.");
     }
 
-    public void OnFuseInteracted()
+    public void OnItemInteracted()
     {
-        print("The fuse was used.");
+        print("The Item was used.");
         incrementInt();
     }
 
@@ -47,7 +47,7 @@ public class Item_Used : MonoBehaviour
 
         if (valConvert >= 4)
         {
-            //print("noice");
+            //print("finished!");
             anim.SetTrigger("Interaction");
         }
     }
