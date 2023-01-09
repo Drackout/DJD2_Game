@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/3D_Models/Map/Fire Escape Door.mb.meta
 guid: d924e59444493ac4bb4f80e5dfcf55f4
+=======
+guid: 824ba31d43532e34a8ba2c0943c4c329
+>>>>>>> 3c8e7f9560f32be90e18c24c8e24782695562c1c:Assets/Map/Fire Escape Door.mb.meta
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -37,7 +41,11 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
+<<<<<<< HEAD:Assets/3D_Models/Map/Fire Escape Door.mb.meta
     addColliders: 0
+=======
+    addColliders: 1
+>>>>>>> 3c8e7f9560f32be90e18c24c8e24782695562c1c:Assets/Map/Fire Escape Door.mb.meta
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1
     importVisibility: 1

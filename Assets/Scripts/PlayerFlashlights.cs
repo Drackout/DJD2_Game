@@ -9,12 +9,17 @@ public class PlayerFlashlights : MonoBehaviour
     [SerializeField] private Color _lightColorNormal;
     [SerializeField] private Color _lightColorUV;
 
+    [SerializeField] private LayerMask currentLayer;
+
+
     private Light               _Light;
 
     // Start is called before the first frame update
     void Start()
     {
         _Light = GetComponent<Light>();
+
+        //currentLayer = 
     }
 
     void Update()

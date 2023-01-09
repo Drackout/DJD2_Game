@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/3D_Models/Map/Door_Wood.mat.meta
 guid: 8dd8497cf85823c43939bf345c178436
+=======
+<<<<<<< HEAD
+guid: 9f92a7ca9f6812d469bbf238c88b3b82
+=======
+guid: 4793520d8e3b433469555e9d711c6541
+>>>>>>> f659c2fb4f62ce96e09c5414d44d74eb1f316df0
+>>>>>>> 3c8e7f9560f32be90e18c24c8e24782695562c1c:Assets/Materials/White Floor.mat.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 2100000
