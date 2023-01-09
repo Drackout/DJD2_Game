@@ -9,6 +9,8 @@ public class PlayerInventory : MonoBehaviour
     [SerializeField] private int        _slotCount;
     [SerializeField] private GameObject _gameObjectTest;
     [SerializeField] private Transform  _ObjectViewSpawn;
+    [SerializeField] private GameObject _player;
+    [SerializeField] private GameObject _playerFlashlight;
 
     private List<Interactive>           _inventory;
     private int                         _selectedSlot;
@@ -20,6 +22,28 @@ public class PlayerInventory : MonoBehaviour
         _inventory = new List<Interactive>();
         _selectedSlot = -1;
         _checkInspector = false;
+    }
+
+    public void HideCursor()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    public void ShowCursor()
+    {
+        Cursor.lockState = CursorLockMode.None;
+    }
+
+    public void disableMovement()
+    {
+        _player.GetComponent<PlayerMovement>().enabled = false;
+        _playerFlashlight.GetComponent<PlayerFlashlights>().enabled = false;
+    }
+
+    public void enableMovement()
+    {
+        _player.GetComponent<PlayerMovement>().enabled = true;
+        _playerFlashlight.GetComponent<PlayerFlashlights>().enabled = true;
     }
 
     public void Add(Interactive item)
@@ -105,9 +129,14 @@ public class PlayerInventory : MonoBehaviour
                     // places it on player position
                     print("HOLD -> " + _inventory[_selectedSlot].getInteractionName());
                     _obj.GetComponent<Interactive>().isOn = false;
+                    if (_obj.GetComponent<ObjectView>())
+                    {
+                        _obj.GetComponent<ObjectView>().enabled = true;
+                    }
                     _obj.SetActive(true);
                     _obj.transform.position = _ObjectViewSpawn.position;
                     _checkInspector = true;
+                    disableMovement();
                 }
             }
             else if (Input.GetKeyUp(KeyCode.Alpha1 + i))
@@ -115,7 +144,12 @@ public class PlayerInventory : MonoBehaviour
                 print("UP!");
 
                 _obj.SetActive(false);
+                if (_obj.GetComponent<ObjectView>())
+                {
+                    _obj.GetComponent<ObjectView>().enabled = false;
+                }
                 _checkInspector = false;
+                enableMovement();
             }
     }
 
