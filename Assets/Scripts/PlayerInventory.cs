@@ -37,13 +37,13 @@ public class PlayerInventory : MonoBehaviour
     public void disableMovement()
     {
         _player.GetComponent<PlayerMovement>().enabled = false;
-        _playerFlashlight.GetComponent<PlayerFlashlights>().enabled = false;
+        //_playerFlashlight.GetComponent<PlayerFlashlights>().enabled = false;
     }
 
     public void enableMovement()
     {
         _player.GetComponent<PlayerMovement>().enabled = true;
-        _playerFlashlight.GetComponent<PlayerFlashlights>().enabled = true;
+        //_playerFlashlight.GetComponent<PlayerFlashlights>().enabled = true;
     }
 
     public void Add(Interactive item)
