@@ -9,37 +9,60 @@ public class PlayerFlashlights : MonoBehaviour
     [SerializeField] private Color _lightColorNormal;
     [SerializeField] private Color _lightColorUV;
 
+
+    [SerializeField] private Camera _camera;
+
     [SerializeField] private LayerMask currentLayer;
 
 
-    private Light               _Light;
+    private Light               _light;
+    private bool                _isUvOn;
 
-    // Start is called before the first frame update
+
+    private void ShowUV()
+    {
+        _camera.cullingMask |= 1 << LayerMask.NameToLayer("UV");
+    }
+
+    private void HideUV()
+    {
+        _camera.cullingMask &= ~(1 << LayerMask.NameToLayer("UV"));
+    }
+
     void Start()
     {
-        _Light = GetComponent<Light>();
-
-        //currentLayer = 
+        _light = GetComponent<Light>();
+        _isUvOn = false;
     }
+
 
     void Update()
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            _Light.enabled = !_Light.enabled;
+            _light.enabled = !_light.enabled;
+            if (_isUvOn && _light.enabled)
+                ShowUV();
+            else
+                HideUV();
         }
         else if (Input.GetButtonDown("Fire2"))
         {
-            if (_Light.color == _lightColorUV)
+            if (_light.color == _lightColorUV)
             {
-                _Light.intensity = _lightIntensityNormal;
-                _Light.color = _lightColorNormal;
+                _isUvOn = false;
+                HideUV();
+                _light.intensity = _lightIntensityNormal;
+                _light.color = _lightColorNormal;
             }
             else
             {
-                _Light.intensity = _lightIntensityUV;
-                _Light.color = _lightColorUV;
-                //Call UV mode
+                _isUvOn = true;
+                if (_light.enabled == true)
+                    ShowUV();
+
+                _light.intensity = _lightIntensityUV;
+                _light.color = _lightColorUV;
             }
         }
     }
