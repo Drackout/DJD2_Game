@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class Item_Used : MonoBehaviour
+public class ItemUsed : MonoBehaviour
 {
     public Interactive Item;
     [SerializeField] private TextMeshProUGUI TotalDone;
