@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DJD2_puzzles.unity
     guid: c9264074a4013da4b9436f521cfb969b
+  - enabled: 1
+    path: Assets/Scenes/How_To_Play.unity
+    guid: 23327f50097dba54a8469a5dc90ce4c9
+  - enabled: 1
+    path: Assets/Scenes/Main_Menu.unity
+    guid: c6dd9b6971eecd846ba776bc2a294465
   m_configObjects: {}

@@ -10,6 +10,17 @@ public class Main_Menu : MonoBehaviour
         SceneManager.LoadScene("DJD2_Puzzles");
     }
 
+    public void GoToHow()
+    {
+        SceneManager.LoadScene("How_To_Play");
+    }
+
+    public void GoToMain()
+    {
+        SceneManager.LoadScene("Main_Menu");
+    }
+
+
     public void QuitGame()
     {
         Application.Quit();
