@@ -16,6 +16,8 @@ public class PlayerInventory : MonoBehaviour
     private int                         _selectedSlot;
     private bool                        _checkInspector;
     private GameObject                  _obj;
+    private Vector3                     _oldPosition;
+    private Quaternion                  _oldRotation;
 
     void Start()
     {
@@ -128,6 +130,9 @@ public class PlayerInventory : MonoBehaviour
                     // while holding disable object interaction
                     // places it on player position
                     print("HOLD -> " + _inventory[_selectedSlot].getInteractionName());
+                    _oldPosition = _obj.transform.position;
+                    _oldRotation = _obj.transform.rotation;
+
                     _obj.GetComponent<Interactive>().isOn = false;
                     if (_obj.GetComponent<ObjectView>())
                     {
@@ -142,6 +147,9 @@ public class PlayerInventory : MonoBehaviour
             else if (Input.GetKeyUp(KeyCode.Alpha1 + i))
             {
                 print("UP!");
+
+                _obj.transform.position = _oldPosition;
+                _obj.transform.rotation = _oldRotation;
 
                 _obj.SetActive(false);
                 if (_obj.GetComponent<ObjectView>())
